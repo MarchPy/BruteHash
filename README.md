@@ -13,6 +13,7 @@ Essas funções podem ser utilizadas em ferramentas para testes de penetração 
 - **-w** (Wordlist path) é o caminho para o arquivo contendo a lista de palavras a serem testadas.
 - **--type** (Type Hash) é o tipo de hash que será quebrado. Atualmente, os valores aceitos são "md5", "sha1", "sha256" e "sha512".
 - **-t** (hash_target) é o hash que se deseja quebrar.
+
 Exemplo:
 ####
     ./BruteHash bruteforce -w /usr/share/wordlists/rockyou.txt -t 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918 --type sha256
@@ -20,6 +21,7 @@ Exemplo:
 ## A função Identifier requer um parâmetros:
 
 - **-t** (hash_target) é o hash que se deseja quebrar.
+
 Exemplo:
 ####
     ./BruteHash identifier -t 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
