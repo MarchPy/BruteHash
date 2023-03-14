@@ -21,7 +21,7 @@ func flags_prog() *cli.App {
 	app.Usage = "Descubra a senha a partir do hash"
 
 	//Definindo flags
-	flags_bruteforce := []cli.Flag{
+	flags_bruteforce1 := []cli.Flag{
 		cli.StringFlag{
 			Name:  "w",
 			Usage: "Wordlist",
@@ -36,6 +36,25 @@ func flags_prog() *cli.App {
 		},
 	}
 
+	flags_bruteforce2 := []cli.Flag{
+		cli.StringFlag{
+			Name:  "t",
+			Usage: "Hash alvo",
+		},
+		cli.StringFlag{
+			Name:  "type",
+			Usage: "Tipo do Hash alvo",
+		},
+		cli.StringFlag{
+			Name:  "min",
+			Usage: "Minimo de caracteres",
+		},
+		cli.StringFlag{
+			Name:  "max",
+			Usage: "Máximo de caracteres",
+		},
+	}
+
 	flags_identifier := []cli.Flag{
 		cli.StringFlag{
 			Name:  "t",
@@ -46,10 +65,16 @@ func flags_prog() *cli.App {
 	// Definindo os comandos
 	app.Commands = []cli.Command{
 		{
-			Name:   "bruteforce",
-			Usage:  "Brute Force de HASH",
-			Flags:  flags_bruteforce,
-			Action: run_bruteforce,
+			Name:   "bruteforce1",
+			Usage:  "Brute Force de HASH com wordlist",
+			Flags:  flags_bruteforce1,
+			Action: run_bruteforce1,
+		},
+		{
+			Name:   "bruteforce2",
+			Usage:  "Brute Force de HASH com gerador de senhas",
+			Flags:  flags_bruteforce2,
+			Action: run_bruteforce2,
 		},
 		{
 			Name:   "indentifier",
@@ -62,7 +87,7 @@ func flags_prog() *cli.App {
 	return app
 }
 
-func run_bruteforce(c *cli.Context) {
+func run_bruteforce1(c *cli.Context) {
 	// Exigindo os dois parametros
 	if !c.IsSet("w") || !c.IsSet("t") || !c.IsSet(("type")) {
 		cli.ShowSubcommandHelp(c)
@@ -72,6 +97,21 @@ func run_bruteforce(c *cli.Context) {
 			c.String("w"),
 			c.String("type"),
 			c.String("t"),
+		)
+	}
+}
+
+func run_bruteforce2(c *cli.Context) {
+	// Exigindo os dois parametros
+	if !c.IsSet("t") || !c.IsSet(("type")) || !c.IsSet("min") || !c.IsSet("max") {
+		cli.ShowSubcommandHelp(c)
+		log.Fatalf("Erro: é necessário fornecer o valor das flags -t, ---min, --max e --type")
+	} else {
+		core.Run_generator(
+			c.String("t"),
+			c.String("type"),
+			c.Int("min"),
+			c.Int("max"),
 		)
 	}
 }

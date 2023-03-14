@@ -8,7 +8,7 @@ Essas funções podem ser utilizadas em ferramentas para testes de penetração 
 
 # Utilização
 
-## A função Bruteforce requer três parâmetros:
+## A função Bruteforce1 requer três parâmetros:
 
 - **-w** (Wordlist path) é o caminho para o arquivo contendo a lista de palavras a serem testadas.
 - **--type** (Type Hash) é o tipo de hash que será quebrado. Atualmente, os valores aceitos são "md5", "sha1", "sha256" e "sha512".
@@ -16,8 +16,22 @@ Essas funções podem ser utilizadas em ferramentas para testes de penetração 
 
 Exemplo:
 ####
-    ./BruteHash bruteforce -w /usr/share/wordlists/rockyou.txt -t 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918 --type sha256
-    
+    ./BruteHash bruteforce1 -w /usr/share/wordlists/rockyou.txt -t 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918 --type sha256
+  
+
+## A função Bruteforce2 requer quatro parâmetros:
+
+- **-t** (hash_target) é o hash que se deseja quebrar.
+- **--type** (Type Hash) é o tipo de hash que será quebrado. Atualmente, os valores aceitos são "md5", "sha1", "sha256" e "sha512".
+- **--min** (Mínimo) Quantidade minima de caracteres
+- **--max** (Máximo) Quantidade máxima de caracteres
+
+Exemplo:
+####
+    ./BruteHash bruteforce2 -t 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918  --type sha256 --min 5 --max 10
+   
+  
+  
 ## A função Identifier requer um parâmetros:
 
 - **-t** (hash_target) é o hash que se deseja quebrar.
