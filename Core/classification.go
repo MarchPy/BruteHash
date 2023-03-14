@@ -21,7 +21,7 @@ func classification(word, type_hash, hash_target string) bool {
 		if hash_string != hash_target {
 			fmt.Printf("[Hash] -\033[92m%s\033[0m- [\033[91mSem correspondência\033[0m] [Palavra] \033[1m%s\033[0m\n", hash_string, word)
 		} else {
-			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n\n", hash_string, word)
+			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n", hash_string, word)
 			found = true
 		}
 
@@ -32,7 +32,7 @@ func classification(word, type_hash, hash_target string) bool {
 		if hash_string != hash_target {
 			fmt.Printf("[Hash] -\033[92m%s\033[0m- [\033[91mSem correspondência\033[0m] [Palavra] \033[1m%s\033[0m\n", hash_string, word)
 		} else {
-			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n\n", hash_string, word)
+			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n", hash_string, word)
 			found = true
 		}
 
@@ -43,7 +43,7 @@ func classification(word, type_hash, hash_target string) bool {
 		if hash_string != hash_target {
 			fmt.Printf("[Hash] -\033[92m%s\033[0m- [\033[91mSem correspondência\033[0m] [Palavra] \033[1m%s\033[0m\n", hash_string, word)
 		} else {
-			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n\n", hash_string, word)
+			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n", hash_string, word)
 			found = true
 		}
 
@@ -54,7 +54,7 @@ func classification(word, type_hash, hash_target string) bool {
 		if hash_string != hash_target {
 			fmt.Printf("[Hash] -\033[92m%s\033[0m- [\033[91mSem correspondência\033[0m] [Palavra] \033[1m%s\033[0m\n", hash_string, word)
 		} else {
-			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n\n", hash_string, word)
+			fmt.Printf("\n[Hash] -\033[92m%s\033[0m- [Senha: \033[92m%s\033[0m] [\033[92mSucesso\033[0m]\n", hash_string, word)
 			found = true
 		}
 	}

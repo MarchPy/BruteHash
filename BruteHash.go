@@ -80,7 +80,7 @@ func flags_prog() *cli.App {
 			Name:   "indentifier",
 			Usage:  "Identifique o tipo de HASH",
 			Flags:  flags_identifier,
-			Action: run_indentifier,
+			Action: run_generator,
 		},
 	}
 
@@ -116,7 +116,7 @@ func run_bruteforce2(c *cli.Context) {
 	}
 }
 
-func run_indentifier(c *cli.Context) {
+func run_generator(c *cli.Context) {
 
 	if !c.IsSet("t") {
 		cli.ShowSubcommandHelp(c)
