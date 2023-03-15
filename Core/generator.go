@@ -7,7 +7,9 @@ import (
 )
 
 func Run_generator(hash_target string, type_hash string, min int, max int) {
-    characters := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" // Define os caracteres que serão utilizados na geração de senhas
+
+    fmt.Printf("\n\nExecutando a quebrea do hash.\n\n")
+    characters := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_-" // Define novamente os caracteres que serão utilizados
 
     start := time.Now() // Salva o momento atual
     for length := min; length <= max; length++ { // Loop que percorre todos os comprimentos de senha desejados
@@ -18,7 +20,7 @@ func Run_generator(hash_target string, type_hash string, min int, max int) {
 }
 
 func generatePassword(length int, prefix, hash_target, type_hash string, start *time.Time) bool {
-    characters := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" // Define novamente os caracteres que serão utilizados
+    characters := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_-" // Define novamente os caracteres que serão utilizados
 
     if length == 1 { // Se o comprimento da senha for 1, a senha foi gerada
         stop := classification(prefix, type_hash, hash_target) // Verifica se a senha gerada é a desejada
